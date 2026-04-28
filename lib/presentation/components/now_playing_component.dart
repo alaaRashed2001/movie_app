@@ -31,6 +31,11 @@ class NowPlayingComponent extends StatelessWidget {
                   height: 400.0,
                   viewportFraction: 1.0,
                   onPageChanged: (index, reason) {},
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  pauseAutoPlayOnTouch: true,
                 ),
                 items: state.nowPlayingMovies.map((item) {
                   return GestureDetector(

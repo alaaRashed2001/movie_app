@@ -12,7 +12,7 @@ final sl = GetIt.instance;
 class ServiceLocator {
   void init() {
     // Bloc
-    sl.registerFactory(() => MoviesBloc(sl()));
+    sl.registerFactory(() => MoviesBloc(sl(), sl(), sl()));
 
     // اطلب الـ Abstract وأعطِه الـ Implementation
     // 1. Data Source
