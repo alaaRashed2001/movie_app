@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/presentation/screens/movie_screen.dart';
+import 'package:movie_app/core/Helpers/navigator_helper.dart';
+import 'package:movie_app/presentation/screens/movies_screen.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -7,30 +9,33 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-     {
-  Future<void> _init() async {
-Navigator.of(context).pushReplacement(
-  MaterialPageRoute(
-    builder: (context) => const MovieScreen(),
-  ),
-);
-
-
-  }
-
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     _init();
   }
 
+  Future<void> _init() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    if (mounted) {
+      NavigatorHelper.jump(
+        context,
+        screen: const MoviesScreen(),
+        replace: true,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Text('Splash Screen'),
+        child: Text(
+          'Movie App',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
