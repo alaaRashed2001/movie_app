@@ -6,6 +6,7 @@ import 'package:movie_app/presentation/components/popular_movies_list.dart';
 import 'package:movie_app/presentation/components/section_header.dart';
 import 'package:movie_app/presentation/components/top_rated_movies.dart';
 import 'package:movie_app/presentation/controllers/movies_bloc.dart';
+import 'package:movie_app/presentation/controllers/movies_event.dart';
 
 class MoviesScreen extends StatelessWidget {
   const MoviesScreen({super.key});
@@ -13,7 +14,7 @@ class MoviesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<MoviesBloc>(),
+      create: (context) => sl<MoviesBloc>()..add(GetNowPlayingMoviesEvent()),
       child: Scaffold(
         body: SingleChildScrollView(
           key: const Key('movieScrollView'),
