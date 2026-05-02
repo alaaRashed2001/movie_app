@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/Helpers/app_asset_helper.dart';
+import 'package:movie_app/core/constants/app_constants.dart';
 import 'package:movie_app/core/utils/enums.dart';
 import 'package:movie_app/data/network/api_constance.dart';
 import 'package:movie_app/presentation/controllers/movies_bloc.dart';
@@ -13,7 +14,13 @@ class PopularMoviesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(
+      buildWhen: (previous, current) =>
+          previous.popularState != current.popularState,
       builder: (context, state) {
+        if (AppConstants.isDebugMode) {
+          debugPrint('Popular Movies ${state.popularState}');
+        }
+
         switch (state.popularState) {
           case RequestState.loading:
             return SizedBox(

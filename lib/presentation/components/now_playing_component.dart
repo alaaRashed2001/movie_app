@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/Helpers/app_asset_helper.dart';
+import 'package:movie_app/core/constants/app_constants.dart';
 import 'package:movie_app/core/utils/enums.dart';
 import 'package:movie_app/data/network/api_constance.dart';
 import 'package:movie_app/presentation/controllers/movies_bloc.dart';
@@ -14,7 +15,13 @@ class NowPlayingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(
+      buildWhen: (previous, current) =>
+          previous.nowPlayingState != current.nowPlayingState,
       builder: (context, state) {
+        if (AppConstants.isDebugMode) {
+          debugPrint('Now Playing Movies ${state.nowPlayingState}');
+        }
+
         switch (state.nowPlayingState) {
           case RequestState.loading:
             return SizedBox(
