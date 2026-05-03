@@ -71,7 +71,7 @@ class NowPlayingComponent extends StatelessWidget {
                           },
                           blendMode: BlendMode.dstIn,
                           child: AppAssetHelper.cachedImage(
-                            ApiConstants.imageUrl(item.backdropPath!),
+                            ApiConstants.imageUrl(item.backdropPath),
                             height: 560.0,
                           ),
                         ),
@@ -101,7 +101,7 @@ class NowPlayingComponent extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 16.0),
                                 child: Text(
-                                  item.title!,
+                                  item.title,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(fontSize: 24),
                                 ),

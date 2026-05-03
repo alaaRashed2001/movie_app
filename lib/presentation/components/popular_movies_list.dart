@@ -52,7 +52,7 @@ class PopularMoviesList extends StatelessWidget {
                             Radius.circular(8.0),
                           ),
                           child: AppAssetHelper.cachedImage(
-                            ApiConstants.imageUrl(movie.backdropPath!),
+                            ApiConstants.imageUrl(movie.backdropPath),
                             width: 120.0,
                           ),
                         ),
