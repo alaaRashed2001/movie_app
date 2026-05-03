@@ -1,14 +1,16 @@
-import 'package:movie_app/core/constants/app_constants.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiConstants {
-  // Endpoints
+  static const String baseUrl = "https://api.themoviedb.org/3";
+  static const String baseImageUrl = "https://image.tmdb.org/t/p/w500";
+  static const String movieBaseUrl = "$baseUrl/movie";
+  static String get apiKey => dotenv.env['API_KEY'] ?? '';
 
-  static const String nowPlayingMovies =
-      "${AppConstants.movieBaseUrl}/now_playing?api_key=${AppConstants.apiKey}";
-  static const String popularMovies =
-      "${AppConstants.movieBaseUrl}/popular?api_key=${AppConstants.apiKey}";
-  static const String topRatedMovies =
-      "${AppConstants.movieBaseUrl}/top_rated?api_key=${AppConstants.apiKey}";
+  static final String nowPlayingMovies =
+      "$movieBaseUrl/now_playing?api_key=$apiKey";
+  static final String popularMovies = "$movieBaseUrl/popular?api_key=$apiKey";
+  static final String topRatedMovies =
+      "$movieBaseUrl/top_rated?api_key=$apiKey";
 
-  static String imageUrl(String path) => "${AppConstants.baseImageUrl}$path";
+  static String imageUrl(String path) => "$baseImageUrl$path";
 }

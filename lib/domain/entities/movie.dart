@@ -2,12 +2,12 @@ import 'package:equatable/equatable.dart';
 
 class Movie extends Equatable {
   final int id;
-  final String? title;
-  final String? backdropPath;
-  final List<int>? genreIds;
-  final String? overview;
-  final num? voteAverage;
-  final String? releaseDate;
+  final String title;
+  final String backdropPath;
+  final List<int> genreIds;
+  final String overview;
+  final num voteAverage;
+  final String releaseDate;
 
   const Movie({
     required this.id,

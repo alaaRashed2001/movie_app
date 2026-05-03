@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:movie_app/core/utils/enums.dart';
+import 'package:movie_app/presentation/components/request_state.dart';
 import 'package:movie_app/domain/entities/movie.dart';
 
 class MoviesState extends Equatable {

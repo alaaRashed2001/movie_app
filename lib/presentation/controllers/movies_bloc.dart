@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/utils/enums.dart';
+import 'package:movie_app/presentation/components/request_state.dart';
 import 'package:movie_app/domain/usecases/get_now_playing_movies_usecase.dart';
 import 'package:movie_app/domain/usecases/get_popular_movies_usecase.dart';
 import 'package:movie_app/domain/usecases/get_top_rated_movies_usecase.dart';

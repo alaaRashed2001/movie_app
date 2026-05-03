@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/Helpers/navigator_helper.dart';
+import 'package:movie_app/presentation/Helpers/navigator_helper.dart';
 import 'package:movie_app/presentation/screens/movies_screen.dart';
 
 class SplashScreen extends StatefulWidget {
