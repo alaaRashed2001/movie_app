@@ -13,4 +13,5 @@ class ApiConstants {
       "$movieBaseUrl/top_rated?api_key=$apiKey";
 
   static String imageUrl(String path) => "$baseImageUrl$path";
+  static String movieDetails(int id) => "$movieBaseUrl/$id?api_key=$apiKey";
 }
